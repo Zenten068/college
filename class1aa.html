@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .btn{
+            height: 50px;
+            width: 100px;
+            background-color: rgb(213, 72, 72);
+            color: rgb(255, 255, 255);
+            border: 1px solid black;
+            font-size: large;
+            border-radius: 10%;
+        }
+
+    </style>
+</head>
+<body>
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name"><br><br>
+        <label for="pass">Password:</label>
+        <input type="password" id="pass"><br><br>
+        <button class="btn">submit</button>
+    </form>    
+    <br>
+    <div class="outer">
+        <div class="container">
+            <button>submit</button>
+        </div>
+    </div>
+    
+    
+</body>
+<script>
+    // function message(event){
+    //     console.log(event.key)
+    //     // alert("you have clicked button")
+    // }
+    // const btn=document.querySelector("button" );
+    // btn.classList.add("btn")
+    // btn.addEventListener("submit",message);
+
+
+    const form=document.querySelector("form")
+    form.addEventListener("submit",function(event){
+        event.preventDefault()
+        console.log("done")
+        alert("form submitted")
+    })
+    const outer=document.querySelector(".outer")
+    const container=document.querySelector(".container")
+    const button=document.querySelector("button")
+
+    outer.addEventListener("click",()=>{console.log("outer")})
+    container.addEventListener('click',()=>{console.log("div")})
+    button.addEventListener('click',()=>{console.log("button")})
+</script>
+</html>
