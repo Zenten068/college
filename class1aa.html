@@ -14,90 +14,127 @@
             font-size: large;
             border-radius: 10%;
         }
+        li{
+            background-color: rgb(207, 255, 207);
+            color: black;
+            width: 300px;
+            display: flex;
+            justify-content: space-between;
+        }
 
     </style>
 </head>
 <body>
-    <form>
+    <!-- <form>
         <label for="name">Name:</label>
         <input type="text" id="name"><br><br>
         <label for="pass">Password:</label>
         <input type="password" id="pass"><br><br>
         <button class="btn">submit</button>
-    </form>    
+    </form>     -->
     <br>
     <div class="outer">
         <div class="container">
             <button>submit</button>
         </div>
     </div>
+<br><br>
+
+    <label for="name">Name:</label>
+    <input type="text" id="name"><br><br>
+    <button class="add">add name</button>
+    <button class="remove">delete all</button>
+    <br><br>  
+    <div class="list"></div>     
+    
+
+    <script>
+        const name=document.querySelector("#name");
+        const add=document.querySelector(".add");
+        const remove=document.querySelector(".remove");
+        const list=document.querySelector(".list");
+    
+        add.addEventListener("click",()=>{
+            const li=document.createElement("li");
+            const dlt=document.createElement("button");
+            dlt.innerText="delete";
+            li.innerText=name.value;
+            list.appendChild(li);
+            li.appendChild(dlt); 
+            dlt.addEventListener("click",()=>{
+                list.removeChild(li);
+            });
+            name.value="";
+        });
+        remove.addEventListener("click",()=>{
+            list.innerText="";
+        });
+
+    
+        // function message(event){
+        //     console.log(event.key)
+        //     alert("you have clicked button")
+        // }
+        // const btn=document.querySelector("button" );
+        // btn.classList.add("btn")
+        // btn.addEventListener("submit",message);
     
     
+        // const form=document.querySelector("form")
+        // form.addEventListener("submit",function(event){
+        //     event.preventDefault()
+        //     console.log("done")
+        //     alert("form submitted")
+        // })
+    
+        // const outer=document.querySelector(".outer")
+        // const container=document.querySelector(".container")
+        // const button=document.querySelector("button")
+        // outer.addEventListener("click",()=>{console.log("outer")})
+        // container.addEventListener('click',()=>{console.log("div")})
+        // button.addEventListener('click',()=>{console.log("button")})
+    
+        // function first(){
+        //     second()
+        // }
+        // function second(){
+        //     third()
+        // }
+        // function third(){
+        //     console.trace()
+        // }
+        // first()
+    
+    // function infinite(){
+    // infinite()
+    // }
+    // infinite()
+    
+    // function calc(){
+    //     console.log(total)
+    //     let total=4234
+    // }
+    // calc()
+    
+    
+    // console.log("first line")
+    // setTimeout(()=>{console.log("second line")},2000)
+    // console.log("third line")
+    
+    
+    // const time1=setInterval(()=>{
+    //     console.log("hello")
+    // },1000);
+    // var count=10
+    
+    // const time=setInterval(()=>{
+    //     console.log("blast in",count)
+    //     count--
+    // },1000);
+    
+    // setInterval(()=>{clearInterval(time)},10000)
+    // setTimeout(()=>{console.log("boooom!")},10100)
+    
+    </script>
 </body>
-<script>
-    function message(event){
-        console.log(event.key)
-        alert("you have clicked button")
-    }
-    const btn=document.querySelector("button" );
-    btn.classList.add("btn")
-    btn.addEventListener("submit",message);
-
-
-    const form=document.querySelector("form")
-    form.addEventListener("submit",function(event){
-        event.preventDefault()
-        console.log("done")
-        alert("form submitted")
-    })
-    // const outer=document.querySelector(".outer")
-    // const container=document.querySelector(".container")
-    // const button=document.querySelector("button")
-
-    // outer.addEventListener("click",()=>{console.log("outer")})
-    // container.addEventListener('click',()=>{console.log("div")})
-    // button.addEventListener('click',()=>{console.log("button")})
-
-    // function first(){
-    //     second()
-    // }
-
-    // function second(){
-    //     third()
-    // }
-
-    // function third(){
-    //     console.trace()
-    // }
-
-    // first()
-
-// function infinite(){
-// infinite()
-// }
-
-// infinite()
-
-
-
-var a=110101101010010100101010100110/
-
-console.log("first line")
-setTimeout(()=>{console.log("second line")},2000)
-console.log("third line")
-// let b=766754
-
-// console.log(a)
-// console.log(b)
-
-// let total=5345
-
-// function calc(){
-//     console.log(total)
-//     let total=4234
-// }
-
-// calc()
-
-</script>
 </html>
