@@ -55,6 +55,10 @@
         const list=document.querySelector(".list");
     
         add.addEventListener("click",()=>{
+            if (name.value===""){
+                alert("please enter a name");
+                return;
+            } 
             const li=document.createElement("li");
             const dlt=document.createElement("button");
             dlt.innerText="delete";
@@ -133,8 +137,24 @@
     // },1000);
     
     // setInterval(()=>{clearInterval(time)},10000)
-    // setTimeout(()=>{console.log("boooom!")},10100)
+    // setTimeout(()=>{alert("boooom!")},10100)
+
+
+    function print(num){
+        setTimeout(() => {
+            console.log("after 2 seconds");
+            num()
+            console.log("again");
+        }, 2000);
+    }
     
+    function greet(){
+        console.log("hello")
+    }
+    greet()
+    print(greet);
+
+
     </script>
 </body>
 </html>
