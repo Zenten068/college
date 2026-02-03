@@ -140,19 +140,40 @@
     // setTimeout(()=>{alert("boooom!")},10100)
 
 
-    function print(num){
-        setTimeout(() => {
-            console.log("after 2 seconds");
-            num()
-            console.log("again");
-        }, 2000);
-    }
+    // function print(num){
+    //     setTimeout(() => {
+    //         console.log("after 2 seconds");
+    //         num()
+    //         console.log("again");
+    //     }, 2000);
+    // }
     
-    function greet(){
-        console.log("hello")
-    }
-    greet()
-    print(greet);
+    // function greet(){
+    //     console.log("hello")
+    // }
+    // greet()
+    // print(greet);
+
+
+//callback hell
+    console.log("starting homework");
+
+    setTimeout(() => {
+        console.log("finished homework");
+        console.log("starting dinner");
+
+        setTimeout(() => {
+            console.log("dinner done")
+            console.log("going to playground");
+
+        setTimeout(() => {
+            console.log("reached playground")
+            
+        },1000);
+            
+        },2000);
+        
+    },1500);
 
 
     </script>
