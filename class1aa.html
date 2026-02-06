@@ -49,30 +49,30 @@
     
 
     <script>
-        const name=document.querySelector("#name");
-        const add=document.querySelector(".add");
-        const remove=document.querySelector(".remove");
-        const list=document.querySelector(".list");
+        // const name=document.querySelector("#name");
+        // const add=document.querySelector(".add");
+        // const remove=document.querySelector(".remove");
+        // const list=document.querySelector(".list");
     
-        add.addEventListener("click",()=>{
-            if (name.value===""){
-                alert("please enter a name");
-                return;
-            } 
-            const li=document.createElement("li");
-            const dlt=document.createElement("button");
-            dlt.innerText="delete";
-            li.innerText=name.value;
-            list.appendChild(li);
-            li.appendChild(dlt); 
-            dlt.addEventListener("click",()=>{
-                list.removeChild(li);
-            });
-            name.value="";
-        });
-        remove.addEventListener("click",()=>{
-            list.innerText="";
-        });
+        // add.addEventListener("click",()=>{
+        //     if (name.value===""){
+        //         alert("please enter a name");
+        //         return;
+        //     } 
+        //     const li=document.createElement("li");
+        //     const dlt=document.createElement("button");
+        //     dlt.innerText="delete";
+        //     li.innerText=name.value;
+        //     list.appendChild(li);
+        //     li.appendChild(dlt); 
+        //     dlt.addEventListener("click",()=>{
+        //         list.removeChild(li);
+        //     });
+        //     name.value="";
+        // });
+        // remove.addEventListener("click",()=>{
+        //     list.innerText="";
+        // });
 
     
         // function message(event){
@@ -156,24 +156,96 @@
 
 
 //callback hell
-    console.log("starting homework");
+    // console.log("starting homework");
 
-    setTimeout(() => {
-        console.log("finished homework");
-        console.log("starting dinner");
+    // setTimeout(() => {
+    //     console.log("finished homework");
+    //     console.log("starting dinner");
 
-        setTimeout(() => {
-            console.log("dinner done")
-            console.log("going to playground");
+    //     setTimeout(() => {
+    //         console.log("dinner done")
+    //         console.log("going to playground");
 
-        setTimeout(() => {
-            console.log("reached playground")
+    //     setTimeout(() => {
+    //         console.log("reached playground")
             
-        },1000);
+    //     },1000);
             
-        },2000);
+    //     },2000);
         
-    },1500);
+    // },1500);
+
+// function finisHW(callback){
+//     console.log("starting homework");
+//     setTimeout(() => {
+//         console.log("finished homework");
+//         console.log("starting dinner");
+//         callback;
+//     },2000);
+// }
+// function finisDinner(callback){
+//     setTimeout(() => {
+//         console.log("dinner done")
+//         console.log("going to playground");
+//         callback();
+//     },2000);}
+
+// function reachPlayground(){
+//     setTimeout(() => {
+//         console.log("reached playground")
+//     },2000);}
+// finisHW(finisDinner(reachPlayground))
+
+// let done = true;
+// const p=new Promise((resolve,reject)=>{
+// setTimeout(() => {
+//     if (done){
+//         resolve({name: "dd", age: 20, mssge:"hello"})
+//     }
+//     else{
+//         reject("byee")
+//     }
+// }, 3000);})
+
+// p.then((data)=>{
+//     console.log(data.name, ":" ,data.mssge)
+// }).catch((data)=>{
+//     console.log(data)
+// }).finally(()=>{
+//     setTimeout(() => {
+//         console.log("run") 
+//     }, 1000);
+//      })
+
+
+function doHMW(){
+    const p=new Promise((resolve,reject)=>{
+        let done=true;
+        console.log("starting homework");
+        setTimeout(() => {
+            if (done){
+            resolve("finished homework");}
+            else{
+            reject("could not finish homework");}
+        }, 2000);
+    });
+    return p;
+}
+
+function eatdinner(){
+    const p=new Promise((resolve,reject)=>{
+        let done=true;
+        console.log("starting dinner");
+        setTimeout(() => {
+            if (done){
+            resolve("dinner done");}
+            else{
+            reject("could not finish dinner");}
+        }, 2000);
+    });
+    return p;
+}
+
 
 
     </script>
