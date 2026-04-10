@@ -1,0 +1,14 @@
+.btn{
+    background-color: #ff4040;
+    border: 1px solid #ccc;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+}
+.btn2{
+    background-color: #002072;
+    border: 1px solid #ccc;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+}

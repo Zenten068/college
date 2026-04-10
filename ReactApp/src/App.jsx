@@ -6,6 +6,7 @@ import './App.css'
 import Navbar from './Component/Navbar'
 import Sample from './Component/Sample'
 import HomePage from './Component/HomePage'
+import loggedin from './Component/HomePage'
 
 function App() {
   const [count, setCount] = useState(0)

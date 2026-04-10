@@ -1,21 +1,30 @@
 import React from 'react'
+import '../CSS/HomePage.css'
 
 function Home(){
-    const loggedin = true
-    return(
-        loggedin ? <button>Logout</button> : <button>Login</button>
-    )
-    // if (loggedin) {
-    //     return (
-            
-    //         <h1>Home Page</h1>
-    //     )
-    // }
-    // else{
-    //     return(
-    //         <h1>Please log in to view the home page.</h1>
-    //     )
-    // }
+    const [loggedin, setLoggedin] = React.useState(true)
+    
+    const handleLogin = () => {
+        if (loggedin == true) {
+        setLoggedin(false)
+    }
+    else{
+        setLoggedin(true)
+    }
+}
+    // CONDITIONAL RENDERING
+        if (loggedin==false) {
+            return(
+             <button class="btn" onClick={handleLogin}>Logout</button>
+            )
+        }
+        else{
+            return(
+            <button className="btn2" onClick={handleLogin}>Login</button>
+            )
+        }
+        // loggedin ? <button class="btn" onClick={handleLogout}>Logout</button> : <button class="btn2" onClick={handleLogin}>Login</button>
+
 }
 
 export default Home
