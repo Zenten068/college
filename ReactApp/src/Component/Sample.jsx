@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import {usestate } from 'react'
+import {useState, useEffect, useRef } from 'react'
 import '../CSS/Sample.css'
 import styled from '@emotion/styled'
 import { css } from '@emotion/react'
-
+import axios from 'axios'
 
  // CLASS COMPONENT
 //  class Sample extends Component {
@@ -52,6 +52,33 @@ import { css } from '@emotion/react'
 
 function Sample() {
     const [count, setCount] = React.useState(0)
+     const[name, setName]= useState("Aman")
+    const [loading, setLoading]=useState(false)
+    const inputref = useRef(null)
+
+     useEffect(()=>{
+    console.log("Component is mounted")
+    return () => {
+      console.log("Component unmount")
+    }
+  },[name])
+
+ useEffect(()=>{
+   const fetchData = async() => {
+      try{
+        setLoading(true)
+        const response = await axios.get("https://jsonplaceholder.typicode.com/todos/5")
+        console.log(response.data)
+        setLoading(false)
+      }catch(e){
+          console.log(e)
+      }
+    }
+    fetchData()
+  },[])
+
+
+
     //[variable , function to update the variable] = useState(initial value of the variable)
     const increment = () => {
         setCount(count + 1)
@@ -69,6 +96,11 @@ function Sample() {
       <div>
         <h1>This is a sample component</h1>
         <h2>{count}</h2>
+        <h3>{name}</h3>
+        {loading?<h2>Loading...</h2>:""}
+        <input type='text' ref={inputref} placeholder='No name'/><br></br>
+        <button onClick={()=> {inputref.current.value = "chal hat bkl"}}>Change Name</button><br></br>
+        
         <Button danger
         // style= {{backgroundColor: 'red', color: 'black',textSizeAdjust: '120%', borderRadius: '5px', border: 'none', padding: '10px ', margin: '2px'}} 
         onClick={increment}>Add</Button>
@@ -82,9 +114,9 @@ function Sample() {
         // css={{backgroundColor: 'lightgreen', color: 'black',textSizeAdjust: '120%', borderRadius: '5px', border: 'none', padding: '10px ', margin: '2px' }} 
         onClick={multiply}>Multiply</Button>
         <br></br>
-        <Button 
-        css={{backgroundColor: 'white',color: 'black',textSizeAdjust: '120%', borderRadius: '5px', border: 'none', padding: '10px ', margin: '2px'}} 
-        onClick={reset}>Reset</Button>
+        <button 
+        css = {halo}
+        onClick={reset}>Reset</button>
       </div>
     )
   }
@@ -102,6 +134,15 @@ margin: 2px;
 
 const func = css`
 background-color: lightgreen;
+color: black; 
+text-size-adjust: 120%;
+border-radius: 5px; 
+border: none;
+padding: 10px;
+margin: 2px;
+`
+const halo = css`
+background-color: grey;
 color: black; 
 text-size-adjust: 120%;
 border-radius: 5px; 

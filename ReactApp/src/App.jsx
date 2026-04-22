@@ -7,6 +7,7 @@ import Navbar from './Component/Navbar'
 import Sample from './Component/Sample'
 import HomePage from './Component/HomePage'
 import loggedin from './Component/HomePage'
+import Contact from './Component/Contact'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -24,6 +25,7 @@ function App() {
         <HomePage />
         <Navbar list = {menu} />
         <Sample />
+        <Contact/>
 
       {/* <div className="ticks"></div>
 

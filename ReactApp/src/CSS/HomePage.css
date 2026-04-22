@@ -1,12 +1,15 @@
+
 .btn{
     background-color: #ff4040;
+    color:black;
     border: 1px solid #ccc;
     padding: 10px 20px;
     margin: 5px;
     cursor: pointer;
 }
 .btn2{
-    background-color: #002072;
+    background-color: #2752bd;
+    color:black;
     border: 1px solid #ccc;
     padding: 10px 20px;
     margin: 5px;
