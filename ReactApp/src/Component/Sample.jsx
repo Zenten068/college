@@ -96,11 +96,6 @@ function Sample() {
       <div>
         <h1>This is a sample component</h1>
         <h2>{count}</h2>
-        <h3>{name}</h3>
-        {loading?<h2>Loading...</h2>:""}
-        <input type='text' ref={inputref} placeholder='No name'/><br></br>
-        <button onClick={()=> {inputref.current.value = "chal hat bkl"}}>Change Name</button><br></br>
-        
         <Button danger
         // style= {{backgroundColor: 'red', color: 'black',textSizeAdjust: '120%', borderRadius: '5px', border: 'none', padding: '10px ', margin: '2px'}} 
         onClick={increment}>Add</Button>
@@ -117,6 +112,10 @@ function Sample() {
         <button 
         css = {halo}
         onClick={reset}>Reset</button>
+        <h3>{name}</h3>
+        {loading?<h2>Loading...</h2>:""}
+        <input type='text' ref={inputref} placeholder='No name'/><br></br>
+        <button onClick={()=> {inputref.current.value = "chal hat bkl"}}>Change Name</button><br></br>
       </div>
     )
   }
