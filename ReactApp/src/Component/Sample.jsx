@@ -115,7 +115,7 @@ function Sample() {
         <h3>{name}</h3>
         {loading?<h2>Loading...</h2>:""}
         <input type='text' ref={inputref} placeholder='No name'/><br></br>
-        <button onClick={()=> {inputref.current.value = "chal hat bkl"}}>Change Name</button><br></br>
+        <button onClick={()=> {inputref.current.value = "name changed"}}>Change Name</button><br></br>
       </div>
     )
   }

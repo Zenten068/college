@@ -1,5 +1,6 @@
 import React from 'react'
 import '../CSS/HomePage.css'
+import User from './user'
 
 function Home(){
     const [loggedin, setLoggedin] = React.useState(true)
@@ -15,7 +16,10 @@ function Home(){
     // CONDITIONAL RENDERING
         if (loggedin==false) {
             return(
-             <button class="btn" onClick={handleLogin}>Logout</button>
+                <>
+             <button className="btn" onClick={handleLogin}>Logout</button>
+             <User/>
+             </>
             )
         }
         else{

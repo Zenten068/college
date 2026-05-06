@@ -7,7 +7,10 @@ function contact(){
 
     function handleSubmit(e){
         e.preventDefault()
-        console.log(name, email, message)
+        console.log("Form submitted")
+        console.log("Name:", name)
+        console.log("Email:", email)
+        console.log("Message:", message)
     }
     return(
         <form onSubmit={handleSubmit}>
